@@ -294,6 +294,7 @@ func (t *Table2Struct) getColumns(table ...string) (tableColumns map[string][]co
 		col.Tag = col.ColumnName
 		col.ColumnComment = col.ColumnComment
 		col.ColumnName = t.camelCase(col.ColumnName)
+		col.TableName = t.camelCase(col.TableName)
 		col.Type = typeForMysqlToGo[col.Type]
 		jsonTag := col.Tag
 		// 字段首字母本身大写, 是否需要删除tag
